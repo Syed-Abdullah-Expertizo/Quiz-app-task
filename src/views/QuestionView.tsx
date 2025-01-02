@@ -20,7 +20,7 @@ const QuestionView = () => {
         if (question && jsondata) {
             setData(jsondata[question - 1])
         }
-    }, [question])
+    }, [question,jsondata])
 
     const handleNext = () => {
         if (selected === null) { return }

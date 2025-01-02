@@ -10,14 +10,14 @@ const BottomPercentageBar = () => {
     useEffect(() => {
         if (question === undefined && totalQuestions === null) { return }
         if (totalQuestions) {
-            let scoreCalc = (score / (question - 1)) * 100
+            const scoreCalc = (score / (question - 1)) * 100
             setScorePercentage((scoreCalc).toFixed(1) + "%")
-            let minScoreCalc = (score / totalQuestions) * 100
+            const minScoreCalc = (score / totalQuestions) * 100
             setMinScore((minScoreCalc).toFixed(1) + "%")
-            let maxScoreCalc = ((totalQuestions - question + 1 + score) / totalQuestions) * 100
+            const maxScoreCalc = ((totalQuestions - question + 1 + score) / totalQuestions) * 100
             setMaxScore((maxScoreCalc).toFixed(1) + "%")
         }
-    }, [question, score])
+    }, [question, score,totalQuestions])
 
     return (
         <div className="absolute left-0 bottom-0 w-full h-20 flex flex-col items-center justify-start px-4">

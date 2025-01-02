@@ -14,7 +14,7 @@ const RemarksText = () => {
         if (userRemark === undefined) return
         setTextRem(userRemark?.remark)
         setColor(userRemark.color)
-    }, [])
+    }, [score])
 
     return (
         <div className="py-4 font-bold" style={{ color: color }}>{textRem}</div>

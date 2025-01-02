@@ -3,20 +3,18 @@ import { OptionsShufflerInterface } from "@/interface"
 import { useEffect, useState } from "react"
 import Item from "./Item"
 import { useStateContext } from "@/context/StateContext"
-import { useRouter } from "next/navigation"
 
 const OptionsShuffler = ({ correct, incorrect, selected, setSelected }: OptionsShufflerInterface) => {
-    const [options, setOptions] = useState<any[] | null>(null)
-    const { score, setScore, question, setQuestion } = useStateContext()
-    const router = useRouter()
+    const [options, setOptions] = useState<string[] | null>(null)
+    const { score, setScore, question } = useStateContext()
     const [isDisabled, setIsDisabled] = useState<boolean>(false)
 
     useEffect(() => { setIsDisabled(false) }, [question])
 
     useEffect(() => {
         if (correct === undefined || incorrect === undefined) { return }
-        let alloptions = [correct, ...incorrect]
-        let shuffle = shuffleArray(alloptions)
+        const alloptions = [correct, ...incorrect]
+        const shuffle = shuffleArray(alloptions)
         setOptions(shuffle)
     }, [correct, incorrect])
 
