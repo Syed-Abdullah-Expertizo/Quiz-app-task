@@ -10,7 +10,7 @@ const BottomPercentageBar = () => {
     useEffect(() => {
         if (question === undefined && totalQuestions === null) { return }
         if (totalQuestions) {
-            const scoreCalc = (score / (question - 1)) * 100
+            const scoreCalc = (score / (question-1)) * 100
             setScorePercentage((scoreCalc).toFixed(1) + "%")
             const minScoreCalc = (score / totalQuestions) * 100
             setMinScore((minScoreCalc).toFixed(1) + "%")

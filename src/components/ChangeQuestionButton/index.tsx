@@ -1,17 +1,15 @@
 import { useStateContext } from "@/context/StateContext"
 import { ChangeQuestionButtonInterface } from "@/interface"
-import { useRouter } from "next/navigation"
 
 const ChangeQuestionButton = ({selected,setSelected}: ChangeQuestionButtonInterface) => {
 
-    const { question, totalQuestions, setQuestion } = useStateContext()
-    const router = useRouter()
+    const { question, totalQuestions, setQuestion ,setView} = useStateContext()
 
     const handleNext = () => {
         if (selected === null) { return }
         setSelected(null)
         if (question === totalQuestions) {
-            router.push(`/result`)
+            setView(2)
         } else {
             setQuestion(question + 1)
         }

@@ -1,15 +1,15 @@
 'use client'
 
-import TopPercentageBar from "@/components/TopPercentage"
-import { JsonDataInterface } from "@/interface"
-import { useEffect, useState } from "react"
 import { useStateContext } from "@/context/StateContext"
-import DifficultyStars from "@/components/DifficultyStars"
-import OptionsShuffler from "@/components/OptionsShuffler"
-import BottomPercentageBar from "@/components/BottomPercentage"
-import ChangeQuestionButton from "@/components/ChangeQuestionButton"
+import { JsonDataInterface } from "@/interface"
+import { useState, useEffect } from "react"
+import BottomPercentageBar from "../BottomPercentage"
+import ChangeQuestionButton from "../ChangeQuestionButton"
+import DifficultyStars from "../DifficultyStars"
+import OptionsShuffler from "../OptionsShuffler"
+import TopPercentageBar from "../TopPercentage"
 
-const QuestionView = () => {
+const QuestionComp = () => {
 
     const [data, setData] = useState<JsonDataInterface | null>(null)
     const { question, jsondata, totalQuestions } = useStateContext()
@@ -42,4 +42,4 @@ const QuestionView = () => {
     )
 }
 
-export default QuestionView
+export default QuestionComp

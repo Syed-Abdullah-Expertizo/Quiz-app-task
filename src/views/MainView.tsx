@@ -6,9 +6,11 @@ import { shuffleArray } from "@/utils/helper";
 import React, { useEffect } from "react";
 import jsonData from "../../questions.json";
 import IntroComp from "@/components/IntroComp";
+import QuestionComp from "@/components/QuestionComp";
+import ResultComp from "@/components/ResultComp";
 
-const IntroView = () => {
-  const { setJsondata, name, setTotalQuestions } = useStateContext();
+const MainView = () => {
+  const { setJsondata, name, setTotalQuestions, view } = useStateContext();
 
   useEffect(() => {
     const shuffleData: JsonDataInterface[] = shuffleArray(jsonData);
@@ -16,7 +18,17 @@ const IntroView = () => {
     setTotalQuestions(jsonData.length);
   }, [name]);
 
-  return <IntroComp />;
+  return (
+    <>
+      {view === 0 ? (
+        <IntroComp />
+      ) : view === 1 ? (
+        <QuestionComp />
+      ) : (
+        <ResultComp />
+      )}
+    </>
+  );
 };
 
-export default IntroView;
+export default MainView;

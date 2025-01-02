@@ -35,12 +35,14 @@ export interface StateContextInterface {
     jsondata: JsonDataInterface[] | null,
     selected: string | null,
     totalQuestions: number | null,
+    view: number,
     setName: (name: string) => void;
     setScore: (score: number) => void;
     setQuestion: (score: number) => void;
     setJsondata: (jsondata: JsonDataInterface[] | null) => void,
     setSelected: (name: string | null) => void;
     setTotalQuestions: (name: number | null) => void;
+    setView: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export interface StateProviderInterface {

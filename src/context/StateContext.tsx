@@ -10,9 +10,10 @@ export const StateProvider = ({ children }: StateProviderInterface) => {
     const [jsondata, setJsondata] = useState<JsonDataInterface[] | null>(null)
     const [selected, setSelected] = useState<string | null>(null);
     const [totalQuestions, setTotalQuestions] = useState<number | null>(null)
+    const [view,setView] = useState<number>(0)
 
     return (
-        <StateContext.Provider value={{ name, score, question, jsondata, selected, totalQuestions, setName, setScore, setQuestion, setJsondata, setSelected, setTotalQuestions }}>
+        <StateContext.Provider value={{ name, score, question, jsondata, selected,view,totalQuestions, setName, setScore, setQuestion, setJsondata, setSelected, setTotalQuestions,setView  }}>
             {children}
         </StateContext.Provider>
     );
