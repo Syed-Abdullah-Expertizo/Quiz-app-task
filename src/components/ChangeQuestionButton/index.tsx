@@ -16,7 +16,7 @@ const ChangeQuestionButton = ({selected,setSelected}: ChangeQuestionButtonInterf
     }
 
   return (
-    <button style={{backgroundColor:question === 20 ? 'green':'black'}} className="border text-white px-4 py-2 rounded-md mt-4 font-semibold"
+    <button style={{backgroundColor: question === 20 ? 'green' : 'black'}} className="border text-white px-4 py-2 rounded-md mt-4 font-semibold"
     onClick={handleNext}>
         {question === 20 ? 'End' : 'Next'}
     </button>
