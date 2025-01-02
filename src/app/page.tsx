@@ -1,20 +1,11 @@
-"use client";
-
-import { useStateContext } from "@/context/StateContext";
-import { useEffect } from "react";
-import jsonData from "../../questions.json";
-import { shuffleArray } from "@/utils/helper";
 import IntroView from "@/views/IntroView";
-import { JsonDataInterface } from "@/interface";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Quiz App",
+  description: "This is quiz app built-on Next.js",
+};
 
 export default function Home() {
-  const { setJsondata, name, setTotalQuestions } = useStateContext();
-
-  useEffect(() => {
-    const shuffleData: JsonDataInterface[] = shuffleArray(jsonData);
-    setJsondata(shuffleData);
-    setTotalQuestions(jsonData.length);
-  }, [name]);
-
   return <IntroView />;
 }
