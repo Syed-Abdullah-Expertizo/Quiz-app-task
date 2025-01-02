@@ -1,15 +1,34 @@
-'use client'
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import StateWrapper from "./StateWrapper";
 
-import { StateProvider } from "@/context/StateContext";
-import "./globals.css"
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
-export default function RootLayout({ children}: Readonly<{  children: React.ReactNode}>) {
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Quiz App",
+  description: "This is quiz app built-on Next.js",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
-      <body >
-        <StateProvider>
-          {children}
-        </StateProvider>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <StateWrapper>{children}</StateWrapper>
       </body>
     </html>
   );

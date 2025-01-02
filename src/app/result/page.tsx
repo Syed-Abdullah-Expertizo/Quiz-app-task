@@ -1,9 +1,7 @@
-import ResultView from "@/views/ResultView"
+import ResultView from "@/views/ResultView";
 
 const Result = () => {
-    return (
-        <ResultView />
-    )
-}
+  return <ResultView />;
+};
 
-export default Result
+export default Result;

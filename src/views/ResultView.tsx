@@ -4,7 +4,7 @@ import RemarksText from "@/components/RemarksText"
 import { useStateContext } from "@/context/StateContext"
 import { useRouter } from "next/navigation"
 import jsonData from '../../questions.json'
-import { shuffleArray } from "@/helper"
+import { shuffleArray } from "@/utils/helper"
 import { JsonDataInterface } from "@/interface"
 
 const ResultView = () => {

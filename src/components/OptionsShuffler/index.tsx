@@ -1,4 +1,4 @@
-import { shuffleArray } from "@/helper"
+import { shuffleArray } from "@/utils/helper"
 import { OptionsShufflerInterface } from "@/interface"
 import { useEffect, useState } from "react"
 import Item from "./Item"

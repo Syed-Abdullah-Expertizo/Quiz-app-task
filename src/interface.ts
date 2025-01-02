@@ -14,10 +14,6 @@ export interface JsonDataInterface {
     correct_answer: string
 }
 
-export interface IconsInterface {
-    styles?: string
-}
-
 export interface OptionsShufflerInterface {
     correct: string | undefined,
     incorrect: string[] | undefined,
@@ -53,4 +49,9 @@ export interface StateProviderInterface {
 
 export interface DifficultyStarsInterface {
     difficulty: string | undefined
+}
+
+export interface ChangeQuestionButtonInterface  {
+    selected: string | null,
+    setSelected: Dispatch<SetStateAction<string | null>>
 }

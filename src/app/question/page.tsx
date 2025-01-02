@@ -1,9 +1,7 @@
-import QuestionView from "@/views/QuestionView"
+import QuestionView from "@/views/QuestionView";
 
 const Question = () => {
-    return (
-        <QuestionView />
-    )
-}
+  return <QuestionView />;
+};
 
-export default Question
+export default Question;
