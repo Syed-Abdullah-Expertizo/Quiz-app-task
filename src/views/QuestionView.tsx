@@ -8,14 +8,12 @@ import DifficultyStars from "@/components/DifficultyStars"
 import OptionsShuffler from "@/components/OptionsShuffler"
 import BottomPercentageBar from "@/components/BottomPercentage"
 import ChangeQuestionButton from "@/components/ChangeQuestionButton"
-import { useRouter } from "next/navigation"
 
 const QuestionView = () => {
 
     const [data, setData] = useState<JsonDataInterface | null>(null)
-    const { question, jsondata, totalQuestions,score,name } = useStateContext()
+    const { question, jsondata, totalQuestions } = useStateContext()
     const [selected, setSelected] = useState<string | null>(null)
-    const router = useRouter()
 
     useEffect(() => {
         if (question && jsondata) {

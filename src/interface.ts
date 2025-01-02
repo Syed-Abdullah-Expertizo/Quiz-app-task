@@ -55,3 +55,7 @@ export interface ChangeQuestionButtonInterface  {
     selected: string | null,
     setSelected: Dispatch<SetStateAction<string | null>>
 }
+
+export type StateWrapperInterface = { 
+    children: React.ReactNode 
+};

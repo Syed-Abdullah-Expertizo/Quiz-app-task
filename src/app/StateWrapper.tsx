@@ -1,8 +1,7 @@
 'use client'
 
 import { StateProvider } from "@/context/StateContext";
-
-export type StateWrapperInterface = { children: React.ReactNode };
+import { StateWrapperInterface } from "@/interface";
 
 const StateWrapper = ({ children }: StateWrapperInterface) => {
   return <StateProvider>{children}</StateProvider>;
